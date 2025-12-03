@@ -69,6 +69,25 @@ if (hamburgerBtn && menuDropdown) {
   }
 }
 
+document.querySelectorAll('.submenu-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.dataset.target;
+    const targetToggle = document.querySelector(targetId);
+
+    if (targetToggle) {
+      targetToggle.click(); // Trigger bento toggle
+    }
+
+    // Scroll smoothly to the Services section (optional)
+    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+
+    // Close the hamburger dropdown (optional)
+    document.getElementById('menuDropdown').classList.remove('show');
+  });
+});
+
 // --------------------
 // Unified Parallax
 // --------------------
