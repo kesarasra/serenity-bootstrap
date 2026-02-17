@@ -59,7 +59,7 @@ font-family: var(--font-sans);
 font-weight: 400;
 color: var(--text-primary);
 line-height: 1.6;
-letter-spacing: 0.02em;
+letter-spacing: 0.01em;
 margin: 0;
 padding: 0;
 width: 100%;
@@ -77,14 +77,14 @@ html {
 h1,h2,h3,h4,h5,h6 {
 font-family: var(--font-heading);
 font-weight: 700;
-letter-spacing: 0.03em;
+letter-spacing: 0.01em;
 color: var(--text-primary);
 transition: opacity var(--transition-medium);
 }
 
 /* Responsive heading scale */
 h1 { font-size: clamp(2.2rem, 4vw, 3rem); }
-h2 { font-size: clamp(1.8rem, 3vw, 2.0rem); }
+h2 { font-size: clamp(1.8rem, 2.5vw, 2.0rem); }
 h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); }
 
 /* keep layout behavior */
