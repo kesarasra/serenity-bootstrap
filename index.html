@@ -63,30 +63,33 @@
       font-weight: bold;
     }
 
-    /* 1. Hide ALL Burmese elements by default (including the intro) */
+    /* 1. Hide BOTH Burmese classes by default */
     .text-mm, .text-mmintro {
-      display: none; 
+      display: none !important; 
     }
 
-    /* 2. When 'lang-mm' is active, show Burmese elements */
-    body.lang-mm .text-mm {
-      display: block; 
-    }
-
-    /* Specific fix for the intro to make sure it respects your layout */
+    /* 2. When 'lang-mm' is active, show BOTH Burmese classes */
+    body.lang-mm .text-mm, 
     body.lang-mm .text-mmintro {
-      display: block;
+      display: block !important; 
+    }
+
+    /* Specific styling for the intro when active */
+    body.lang-mm .text-mmintro {
+      display: flex !important; /* Use flex to respect your 'inline-block' centering */
+      flex-wrap: wrap;
+      justify-content: center;
       word-wrap: break-word;
       font-size: 1.8rem;
     }
 
     /* 3. Toggle English visibility */
     body.lang-mm .text-en {
-      display: none;
+      display: none !important;
     }
 
     body:not(.lang-mm) .text-en {
-      display: block;
+      display: block !important;
     }
 
     /* Bento-section backgrounds */
@@ -247,11 +250,9 @@
         <span class="text-en">Serenity Counseling and Mental Health Services</span>
         
         <span class="text-mmintro" lang="my">
-          <span style="white-space: nowrap;">Serenity တိုင်ပင်နှစ်သိမ့်ဆွေးနွေးပေးခြင်း</span> 
-          &nbsp; 
-          <span style="white-space: nowrap;">နှင့်</span> 
-          &nbsp; 
-          <span style="white-space: nowrap;">စိတ်ကျန်းမာရေးဝန်ဆောင်မှု</span>
+          <span style="display: inline-block; white-space: nowrap;">Serenity တိုင်ပင်နှစ်သိမ့်ဆွေးနွေးပေးခြင်း</span> 
+          <span style="display: inline-block; white-space: nowrap;">နှင့်</span> 
+          <span style="display: inline-block; white-space: nowrap;">စိတ်ကျန်းမာရေးဝန်ဆောင်မှု</span>
         </span>
       </h2>
       <a href="#about" class="btn pulse-glow">

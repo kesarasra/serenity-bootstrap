@@ -1,4 +1,28 @@
 <section id="about">
+  <style>
+    /* 1. The Container: Remove flex, use text-align instead */
+    .text-mm, .text-mmintro {
+      display: block; /* Changed from flex to block */
+      text-align: center; 
+      line-height: 1.8;
+      word-break: normal;
+    }
+
+    /* 2. The Chunks: Allow them to wrap internally if they are wider than the parent */
+    .mm-chunk {
+      display: inline-block;
+      white-space: normal;       /* Changed from nowrap to normal */
+      overflow-wrap: break-word; /* Safety net: breaks words if they hit the wall */
+      max-width: 100%;           /* Ensures chunk never exceeds card width */
+      margin: 0 3px;             /* Half-space on each side for natural flow */
+    }
+
+    /* 3. List Item Alignment */
+    #activities ul li .text-mm {
+      text-align: left;
+      display: inline;
+    }
+  </style>
 
   <!-- Section 1: Motto Cards -->
     <div id="mottos" class="py-4" style="position: relative; z-index: 5;">
@@ -8,7 +32,7 @@
             <div class="frosted-card text-center p-4 py-2">
               <h4 class="p-2" style="color: var(--text-primary);">
                 <span class="text-en">Our Values</span>
-                <span class="text-mm" style="line-height: 1.7;">ကျွန်ုပ်တို့၏ တန်ဖိုးများ</span>
+                <span class="text-mm" style="line-height: 1.7; letter-spacing: -0.5px;">ကျွန်ုပ်တို့၏ တန်ဖိုးများ</span>
               </h4>
               <p>
                 <span class="text-en">Trust</span>
@@ -36,15 +60,26 @@
             <div class="text-center p-4">
               <h4 class="p-2" style="color: var(--text-primary); line-height: 1.7;">
                 <span class="text-en">Our Mission</span>
-                <span class="text-mm">ကျွန်ုပ်တို့၏ရည်မှန်းချက်</span>
+                <span class="text-mm" style="letter-spacing: -0.5px;">ကျွန်ုပ်တို့၏ရည်မှန်းချက်</span>
               </h4>
               <p>
                 <span class="text-en">To ensure delivery of mental health services grounded in professional ethics and expertise</span>
-                <span class="text-mm">အတတ်ပညာဆိုင်ရာကျင့်ဝတ်နှင့်ကျွမ်းကျင်မှုအပေါ်အခြေခံ၍ စိတ်ကျန်းမာရေးစောင့်ရှောက်မှုများပေးခြင်း။</span>
+                <span class="text-mm" lang="my">
+                  <span class="mm-chunk">အတတ်ပညာဆိုင်ရာကျင့်ဝတ်နှင့်</span>
+                  <span class="mm-chunk">ကျွမ်းကျင်မှုအပေါ်အခြေခံသည့်</span> 
+                  <span class="mm-chunk">စိတ်ကျန်းမာရေးစောင့်ရှောက်မှုများ</span>
+                  <span class="mm-chunk">ပေးရန်။</span>
+                </span>
               </p>
               <p>
                 <span class="text-en">To Strengthen the role of qualified lay counsellors through structured training and safe supervised practice</span>
-                <span class="text-mm">စနစ်တကျလေ့ကျင့် ကြီးကြပ်မှုများXXXXမှတဆင့်အရည်အချင်းပြည့်မီသော နှစ်သိမ့်ဆွေးနွေးပေးသူများ၏အခန်းကဏ္ဍ(Para Professional/Lay Counselor) ကိုမြှင့်တင်ပေးရန်။</span>
+                <span class="text-mm" lang="my">
+                  <span class="mm-chunk">စနစ်တကျလေ့ကျင့် ကြီးကြပ်မှုများ</span>
+                  <span class="mm-chunk">မှတဆင့် အရည်အချင်းပြည့်မီသော</span> 
+                  <span class="mm-chunk">နှစ်သိမ့်ဆွေးနွေးပေးသူများ၏</span>
+                  <span class="mm-chunk">အခန်းကဏ္ဍ (Para Professional/Lay Counselor) ကို</span>
+                  <span class="mm-chunk">မြှင့်တင်ပေးရန်။</span>
+                </span>
               </p>
               <p>
                 <span class="text-en">To serve and stand as a resource centre facilitating continuous professional development in mental health care</span>
@@ -57,14 +92,16 @@
             <div class="frosted-card text-center p-4">
               <h4 class="p-2" style="color: var(--text-midprimary);">
                 <span class="text-en">Our Vision</span>
-                <span class="text-mm" style="line-height: 1.7;">ကျွန်ုပ်တို့၏မျှော်မှန်းချက်</span>
+                <span class="text-mm" style="line-height: 1.7; letter-spacing: -0.5px;">ကျွန်ုပ်တို့၏မျှော်မှန်းချက်</span>
               </h4>
               <p>
-                <span class="text-en">To become a trusted place of choice, committed to delivering
-                  high quality mental health support accessible without barriers
-                </span>
-                <span class="text-mm">
-                  အရည်အသွေးမြင့် စိတ်ကျန်းမာရေးXXXXစောင့်ရှောက်မှုများကို အဟန့်အတားမရှိ ယုံကြည်စွာ ရယူနိုင်သော နေရာတစ်ခုအဖြစ် ရပ်တည်ရန်
+                <span class="text-en">To become a trusted place of choice, committed to delivering high quality mental health support accessible without barriers</span>
+                <span class="text-mm" lang="my">
+                  <span class="mm-chunk">အရည်အသွေးမြင့် စိတ်ကျန်းမာရေး</span>
+                  <span class="mm-chunk">စောင့်ရှောက်မှုများကို</span> 
+                  <span class="mm-chunk">အတားအဆီးမရှိ ယုံကြည်စွာ</span>
+                  <span class="mm-chunk">ရယူနိုင်သော နေရာတစ်ခုအဖြစ်</span>
+                  <span class="mm-chunk">ရပ်တည်ရန်။</span>
                 </span>
               </p>
             </div>
