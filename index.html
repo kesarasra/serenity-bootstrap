@@ -51,7 +51,8 @@
     /* Home text block */
     #home-text {
       z-index: 10;
-      max-width: 600px;
+      max-width: 90%;
+      width: auto;
       background: rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(12px);
       padding: 2rem;
@@ -60,6 +61,32 @@
     #home-text h2 {
       font-size: 2rem;
       font-weight: bold;
+    }
+
+    /* 1. Hide ALL Burmese elements by default (including the intro) */
+    .text-mm, .text-mmintro {
+      display: none; 
+    }
+
+    /* 2. When 'lang-mm' is active, show Burmese elements */
+    body.lang-mm .text-mm {
+      display: block; 
+    }
+
+    /* Specific fix for the intro to make sure it respects your layout */
+    body.lang-mm .text-mmintro {
+      display: block;
+      word-wrap: break-word;
+      font-size: 1.8rem;
+    }
+
+    /* 3. Toggle English visibility */
+    body.lang-mm .text-en {
+      display: none;
+    }
+
+    body:not(.lang-mm) .text-en {
+      display: block;
     }
 
     /* Bento-section backgrounds */
@@ -218,7 +245,14 @@
       </h3>
       <h2 style="padding-top: 1.2vh; line-height: 1.6">
         <span class="text-en">Serenity Counseling and Mental Health Services</span>
-        <span class="text-mm">Serenity တိုင်ပင်နှစ်သိမ့်ဆွေးနွေးပေးခြင်း နှင့်XXXXစိတ်ကျန်းမာရေးဝန်ဆောင်မှု</span>
+        
+        <span class="text-mmintro" lang="my">
+          <span style="white-space: nowrap;">Serenity တိုင်ပင်နှစ်သိမ့်ဆွေးနွေးပေးခြင်း</span> 
+          &nbsp; 
+          <span style="white-space: nowrap;">နှင့်</span> 
+          &nbsp; 
+          <span style="white-space: nowrap;">စိတ်ကျန်းမာရေးဝန်ဆောင်မှု</span>
+        </span>
       </h2>
       <a href="#about" class="btn pulse-glow">
         <span class="text-en">Learn More</span>

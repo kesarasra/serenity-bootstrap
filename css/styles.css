@@ -1243,6 +1243,7 @@ transition: transform var(--transition-medium), filter var(--transition-medium);
 /* Buttons global */
 button, .btn{ font-family: var(--font-heading); font-weight:500; letter-spacing:0.02em; }
 
+
 /* =========================
 ENHANCED MOBILE HEADER
 ========================= */
